@@ -35,10 +35,15 @@ export async function CadastroUsuarioValidation(usuario) {
   if (usuario.senha.length < 8) {
     throw new Error("A senha deve ter no minímo 8 digitos")
   }
+}
 
+export async function LoginUsuariosValidation(usuario) {
+  if (!usuario.email) {
+    throw new Error("Email é obrigatório")
+  }
 
+  if (!usuario.senha) {
+    throw new Error("Senha é obrigatória")
+  }
   
-
-
-
 }
