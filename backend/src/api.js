@@ -1,12 +1,13 @@
 import 'dotenv/config.js';
 import cors from 'cors';
 import express from 'express';
-import conexao from './repository/conexao/connection.js';
+import Rotas from './routes.js';
 
 const api = express();
 
 api.use(express.json());
 api.use(cors());
+Rotas(api);
 
 const PORTA = process.env.PORT || 2011;
 
